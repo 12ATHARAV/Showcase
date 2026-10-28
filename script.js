@@ -149,6 +149,7 @@ window.addEventListener('scroll', () => {
     
     if (hero) {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        hero.style.animation = 'pulse 8s ease-in-out infinite';
     }
 });
 
