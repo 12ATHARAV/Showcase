@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initSmoothScroll();
     initPropertyCards();
+    initMobileMenu();
 });
 
 // ===== NAVBAR SCROLL EFFECT =====
@@ -96,6 +97,32 @@ function initSmoothScroll() {
                 });
             }
         });
+    });
+}
+
+// ===== MOBILE MENU =====
+function initMobileMenu() {
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (!toggle || !navLinks) return;
+    
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
     });
 }
 
