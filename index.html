@@ -4,32 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumière — Fine Dining</title>
+  <meta name="description" content="Lumière is a modern French fine dining restaurant in New York. Reserve your table for an unforgettable culinary experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader" class="preloader">
-    <div class="preloader-inner">
-      <span class="preloader-logo">L</span>
-      <div class="preloader-bar"><div class="preloader-fill"></div></div>
-    </div>
-  </div>
-
   <!-- Navigation -->
   <nav id="navbar" class="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">Lumière</a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul id="navMenu" class="nav-menu">
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reserve">Reserve</a></li>
+      <ul id="navMenu" class="nav-menu" role="menu">
+        <li role="none"><a href="#about" role="menuitem">Our Story</a></li>
+        <li role="none"><a href="#menu" role="menuitem">Menu</a></li>
+        <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#reserve" role="menuitem">Reserve</a></li>
       </ul>
     </div>
   </nav>
@@ -37,7 +30,9 @@
   <!-- Hero -->
   <section id="hero" class="hero">
     <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80" alt="Restaurant ambiance" class="hero-img" loading="eager">
+      <video autoplay muted loop playsinline class="hero-video" poster="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80">
+        <source src="https://videos.pexels.com/video-files/2877468/2877468-uhd_2560_1440_30fps.mp4" type="video/mp4">
+      </video>
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -46,10 +41,10 @@
         <span class="hero-line"><span class="hero-line-inner">Where flavor</span></span>
         <span class="hero-line"><span class="hero-line-inner">meets art.</span></span>
       </h1>
-      <p class="hero-sub">A culinary journey through modern French cuisine, crafted with seasonal ingredients and timeless technique.</p>
+      <p class="hero-sub">Modern French cuisine crafted with seasonal ingredients and timeless technique.</p>
       <a href="#reserve" class="btn btn-primary">Reserve a Table</a>
     </div>
-    <div class="hero-scroll-hint">
+    <div class="hero-scroll-hint" aria-hidden="true">
       <span>Scroll</span>
       <div class="hero-scroll-line"></div>
     </div>
@@ -60,7 +55,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-media reveal">
-          <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800&q=80" alt="Chef plating" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800&q=80" alt="Chef plating a dish" loading="lazy">
         </div>
         <div class="about-text">
           <span class="section-label reveal">Our Story</span>
@@ -99,40 +94,41 @@
       <span class="section-label reveal">The Menu</span>
       <h2 class="section-title reveal">Seasonal Tasting Menu</h2>
       <p class="section-intro reveal">Seven courses that change with the seasons. Wine pairing available.</p>
-      
-      <div class="menu-grid">
-        <article class="menu-card reveal">
-          <img src="https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=600&q=80" alt="Amuse-bouche" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Amuse-bouche</h3>
-            <p>Hokkaido scallop, cauliflower velouté, gold leaf</p>
-            <span class="menu-price">Included</span>
-          </div>
-        </article>
-        <article class="menu-card reveal">
-          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="First course" loading="lazy">
-          <div class="menu-card-body">
-            <h3>First Course</h3>
-            <p>Burrata, heirloom tomato, basil oil, aged balsamic</p>
-            <span class="menu-price">$28</span>
-          </div>
-        </article>
-        <article class="menu-card reveal">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Main course" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Main Course</h3>
-            <p>Wagyu beef tenderloin, truffle jus, pomme purée</p>
-            <span class="menu-price">$85</span>
-          </div>
-        </article>
-        <article class="menu-card reveal">
-          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Dessert" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Dessert</h3>
-            <p>Valrhona chocolate soufflé, crème anglaise, mint</p>
-            <span class="menu-price">$32</span>
-          </div>
-        </article>
+      <div class="menu-scroll">
+        <div class="menu-grid">
+          <article class="menu-card reveal">
+            <img src="https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=600&q=80" alt="Amuse-bouche" loading="lazy">
+            <div class="menu-card-body">
+              <h3>Amuse-bouche</h3>
+              <p>Hokkaido scallop, cauliflower velouté, gold leaf</p>
+              <span class="menu-price">Included</span>
+            </div>
+          </article>
+          <article class="menu-card reveal">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="First course" loading="lazy">
+            <div class="menu-card-body">
+              <h3>First Course</h3>
+              <p>Burrata, heirloom tomato, basil oil, aged balsamic</p>
+              <span class="menu-price">$28</span>
+            </div>
+          </article>
+          <article class="menu-card reveal">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Main course" loading="lazy">
+            <div class="menu-card-body">
+              <h3>Main Course</h3>
+              <p>Wagyu beef tenderloin, truffle jus, pomme purée</p>
+              <span class="menu-price">$85</span>
+            </div>
+          </article>
+          <article class="menu-card reveal">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Dessert" loading="lazy">
+            <div class="menu-card-body">
+              <h3>Dessert</h3>
+              <p>Valrhona chocolate soufflé, crème anglaise, mint</p>
+              <span class="menu-price">$32</span>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -145,7 +141,7 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Interior" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior" loading="lazy">
       </div>
       <div class="gallery-item reveal">
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Plating" loading="lazy">
@@ -177,27 +173,27 @@
             please contact us directly.
           </p>
           <div class="reserve-meta reveal">
-            <div>
+            <div class="meta-block">
               <h4>Hours</h4>
               <p>Tue – Sat: 18:00 – 23:00</p>
               <p>Sun Brunch: 11:00 – 14:00</p>
             </div>
-            <div>
+            <div class="meta-block">
               <h4>Contact</h4>
               <p>+1 (212) 555-0187</p>
               <p>reservations@lumiere.example</p>
             </div>
           </div>
         </div>
-        <form id="reserveForm" class="reserve-form reveal">
+        <form id="reserveForm" class="reserve-form reveal" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required>
+              <input type="text" id="name" name="name" required autocomplete="name">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" required autocomplete="email">
             </div>
           </div>
           <div class="form-row">
@@ -229,7 +225,7 @@
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" required>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
             </div>
           </div>
           <div class="form-group">
